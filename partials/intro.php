@@ -1,0 +1,1 @@
+<h1>New theme deployed</h1>
