@@ -30,6 +30,12 @@ function register_menu()
   ));
 }
 
+/*
+*   Allow to add page title dynamicly
+*/
+
+add_theme_support('title-tag');
+
 
 /*
 *   ACTIONS
@@ -37,3 +43,4 @@ function register_menu()
 add_action('init', 'delete_admin_bar');
 add_action('init', 'adding_theme_image_sizes');
 add_action('init', 'register_menu');
+

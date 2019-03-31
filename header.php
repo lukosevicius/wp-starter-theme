@@ -8,7 +8,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('some-class'. $sidebar_class); ?>>
+<body <?php body_class('some-class'); ?>>
 
 <!-- <header>
     <?php
