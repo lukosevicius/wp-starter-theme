@@ -1,4 +1,4 @@
-Version 1.0
+Version 1.2
 
-Clean WP Start theme by Mantas Lukosevicius
+Clean WP Start theme by Mantas Lukosevicius <br/>
 mantasweb.lt

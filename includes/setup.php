@@ -16,31 +16,13 @@ function adding_theme_image_sizes()
 *   Add theme support
 */
 
-add_theme_support('custom-logo');
-
-/*
-*   Registering menu
-*/
-
-function register_menu()
-{
+function mu_setup_theme(){
+  add_theme_support('post-thumbnails');
+  add_theme_support('custom-logo');
+  add_theme_support('title-tag');
   register_nav_menus(array(
-    'top-menu' => __('Viršutinis meniu', 'thetheme'),
-    'bottom-menu' => __('Apatinis meniu', 'thetheme')
+    'top-menu' => __('Viršutinis meniu', 'wp-starter-theme'),
+    'bottom-menu' => __('Apatinis meniu', 'wp-starter-theme')
   ));
 }
-
-/*
-*   Allow to add page title dynamicly
-*/
-
-add_theme_support('title-tag');
-
-
-/*
-*   ACTIONS
-*/
-add_action('init', 'delete_admin_bar');
-add_action('init', 'adding_theme_image_sizes');
-add_action('init', 'register_menu');
 
