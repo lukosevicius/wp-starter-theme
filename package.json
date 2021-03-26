@@ -4,7 +4,9 @@
   "description": "Version 1.2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"hello-world!\""
+    "test": "echo \"hello-world!\"",
+    "sass-start": "node-sass -w -r --source-map true ./assets/sass/main.scss ./assets/css/main.css",
+    "sass-prod": "node-sass -r --output-style compressed ./assets/sass/main.scss ./assets/css/main.min.css"
   },
   "repository": {
     "type": "git",
