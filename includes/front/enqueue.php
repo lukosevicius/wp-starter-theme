@@ -10,9 +10,9 @@ function ml_enqueue() {
     define('CSS', get_template_directory_uri() . '/assets/css/');
 
     //CSS
-    wp_register_style("ml_styles", CSS.'style.css');
+    wp_register_style("ml_main_css", CSS.'main.css');
 
-    wp_enqueue_style("ml_styles");
+    wp_enqueue_style("ml_main_css");
 
     // JS
     wp_enqueue_script( 'jquery.lazy.min.js', JS.'jquery.lazy.min.js', array('jquery'), false, true);
