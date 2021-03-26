@@ -1,9 +1,5 @@
 <?php
 
-function delete_admin_bar(){
-  show_admin_bar(false);
-}
-
 /*
 *   Add image sizes
 */
