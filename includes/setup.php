@@ -16,7 +16,7 @@ function adding_theme_image_sizes()
 *   Add theme support
 */
 
-function mu_setup_theme(){
+function ml_setup_theme(){
   add_theme_support('post-thumbnails');
   add_theme_support('custom-logo');
   add_theme_support('title-tag');
