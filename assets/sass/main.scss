@@ -1,9 +1,11 @@
-
 /**********************************
-******          UTILS 
+******          Main 
 **********************************/
 
 
-@import '_reset.scss';
-@import '_vars.scss';
-@import '_global.scss'; 
+@import 'global/_reset.scss';
+@import 'global/_vars.scss';
+@import 'global/_global.scss'; 
+
+@import 'parts/_header.scss'; 
+@import 'parts/_footer.scss'; 
