@@ -1,5 +1,7 @@
 <?php 
 
+// add_action("widgets_init", "ml_widgets"); 
+
 function ml_widgets(){
     register_sidebar(array(
         'name'              => __('Theme Sidebar', 'udemy'),
