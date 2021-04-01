@@ -1,13 +1,35 @@
 <?php
 
+/**********************************
+******          Functions List 
+**********************************/
 /*
-*   Print uppercase text from custom field
+
+ ** print images:
+
+ img_src($id, $size = null);;
+ img_att($id, $size =null, $tmp_alt = null);
+ img_bg($id, $size = null);
+
+ ** print images whith jquery lazyload:
+
+ img_data($id, $size = null, $tmp_alt = null);
+ bg_data($id, $size = null);
+
+
 */
+/**********************************
+******          Images - START
+**********************************/
 
-function upper($name, $id = false){
-
-    echo strtoupper(get_field($name, $id));
+/*
+*   Print image src
+*/
+function img_src($id, $size = null)
+{
+    echo (wp_get_attachment_image_src($id, $size))[0];
 }
+
 
 /*
 *   Print image src and alt attributs
@@ -35,14 +57,6 @@ function img_bg($id, $size = null)
 {
     $src = (wp_get_attachment_image_src($id, $size))[0];
     printf( "background-image: url('%s')", $src );
-}
-
-/*
-*   Print image src
-*/
-function img_src($id, $size = null)
-{
-    echo (wp_get_attachment_image_src($id, $size))[0];
 }
 
 
@@ -74,3 +88,7 @@ function bg_data($id, $size = null)
     $src = (wp_get_attachment_image_src($id, $size))[0];
     printf( 'data-src="%s" ', $src);
 }
+
+/**********************************
+******          Images - END
+**********************************/
