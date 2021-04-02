@@ -1,5 +1,7 @@
 <?php
 
+define('ML_DEV_MODE', true);
+
 /*  
 *   INCLUDES
 */
