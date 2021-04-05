@@ -33,12 +33,12 @@ function ml_enqueue() {
     /*  
     *   Register
     */
-    // wp_enqueue_script( 'jquery.lazy.min.js', JS.'jquery.lazy.min.js', ['jquery'], $ver, true);
-    wp_enqueue_script( 'ml_main', JS.'main.js', [], $ver, true);
+    // wp_enqueue_script( 'jquery.lazy.min.js', JS.'vendor/jquery.lazy.min.js', ['jquery'], $ver, true);
+    wp_enqueue_script( 'ml_bundle', JS.'dist/bundle.js', [], $ver, true);
     /*  
     *   Enqueue
     */
     // wp_enqueue_script("jquery"); //default WP jquery file
     // wp_enqueue_script("ml_jquery_lazy");
-    wp_enqueue_script("ml_main");
+    wp_enqueue_script("ml_bundle");
 }
