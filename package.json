@@ -7,8 +7,8 @@
     "test": "echo \"hello-world!\"",
     "sass": "node-sass -w -r --source-map true ./assets/sass/main.scss ./assets/css/main.css",
     "sass-prod": "node-sass -r --output-style compressed ./assets/sass/main.scss ./assets/css/main.min.css",
-    "compile": "webpack -w",
-    "compile-prod": "webpack -p"
+    "compile": "webpack -w --mode=development",
+    "compile-prod": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
