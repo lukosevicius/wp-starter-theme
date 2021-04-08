@@ -6,10 +6,11 @@
   "scripts": {
     "test": "echo \"hello-world!\"",
     "sass": "node-sass -w -r --source-map true ./assets/sass/main.scss ./assets/css/main.css",
-    "sass-prod": "node-sass -r --output-style compressed ./assets/sass/main.scss ./assets/css/main.min.css",
+    "sass-prod": "node-sass -r --output-style compressed ./assets/sass/main.scss ./assets/css/main.css",
     "compile": "webpack -w --mode=development",
     "compile-prod": "webpack --mode=production",
-    "prod": "npm run sass-prod && npm run compile-prod"
+    "prefix": "postcss ./assets/css/main.css -o ./assets/css/main.css",
+    "prod": "npm run sass-prod && npm run prefix && npm run compile-prod "
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,9 @@
   "homepage": "https://github.com/lukosevicius/wp-starter-theme#readme",
   "devDependencies": {
     "node-sass": "^5.0.0",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.9",
+    "postcss-cli": "^8.3.1",
     "webpack": "^5.30.0",
     "webpack-cli": "^4.6.0"
   }
