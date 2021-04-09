@@ -21,11 +21,11 @@ function ml_enqueue() {
     /*  
     *   Register
     */
-    wp_register_style("ml_main_css", CSS.'main.css', [], $ver);
+    wp_register_style("ml_style_css", CSS.'style.css', [], $ver);
     /*  
     *   Enqueue
     */
-    wp_enqueue_style("ml_main_css");
+    wp_enqueue_style("ml_style_css");
 
     /**********************************
     ******          JavaScript 

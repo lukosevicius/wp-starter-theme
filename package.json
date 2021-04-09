@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"hello-world!\"",
-    "sass": "node-sass -w -r --source-map true ./assets/sass/main.scss ./assets/css/main.css",
-    "sass-prod": "node-sass -r --output-style compressed ./assets/sass/main.scss ./assets/css/main.css",
+    "sass": "node-sass -w -r --source-map true ./assets/sass/main.scss ./assets/css/style.css",
+    "sass-prod": "node-sass -r --output-style compressed ./assets/sass/main.scss ./assets/css/style.css",
     "compile": "webpack -w --mode=development",
     "compile-prod": "webpack --mode=production",
     "prefix": "postcss ./assets/css/main.css -o ./assets/css/main.css",
