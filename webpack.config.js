@@ -7,6 +7,6 @@ module.exports = {
     },
     output: {
         path: path.resolve('./assets/js/dist/'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     }
 };

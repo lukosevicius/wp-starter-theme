@@ -34,7 +34,7 @@ function ml_enqueue() {
     *   Register
     */
     // wp_enqueue_script( 'jquery.lazy.min.js', JS.'vendor/jquery.lazy.min.js', ['jquery'], $ver, true);
-    wp_enqueue_script( 'ml_bundle', JS.'dist/bundle.js', [], $ver, true);
+    wp_enqueue_script( 'ml_bundle', JS.'dist/main.bundle.js', [], $ver, true);
     /*  
     *   Enqueue
     */
