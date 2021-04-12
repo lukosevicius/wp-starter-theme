@@ -1,1 +1,1 @@
-wClean WP Starter theme by Mantas Lukosevicius <br/>
+Clean WP Starter theme <br/>
