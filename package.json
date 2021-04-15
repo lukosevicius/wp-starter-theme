@@ -7,9 +7,9 @@
     "test": "echo \"hello-world!\"",
     "sass": "node-sass -w -r --source-map true ./assets/sass/main.scss ./assets/css/style.css",
     "sass-prod": "node-sass -r --output-style compressed ./assets/sass/main.scss ./assets/css/style.css",
-    "compile": "webpack -w --mode=development",
-    "compile-prod": "webpack --mode=production",
-    "prefix": "postcss ./assets/css/main.css -o ./assets/css/main.css",
+    "compile": "webpack -w --mode=development --progress",
+    "compile-prod": "webpack --mode=production --progress",
+    "prefix": "postcss ./assets/css/style.css -o ./assets/css/style.css",
     "prod": "npm run sass-prod && npm run prefix && npm run compile-prod "
   },
   "repository": {
