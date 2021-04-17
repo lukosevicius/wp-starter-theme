@@ -2,29 +2,87 @@
 ******          CSS reset 
 **********************************/
 
+/**********************************
+******          CSS reset 
+**********************************/
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
+
+// Box sizing
+html{
   box-sizing: border-box;
 }
 
-/* Remove default margin */
+*{
+  &,
+  &::before,
+  &::after{
+    box-sizing: inherit;
+  }
+}
+
+// Blocks
+html,
 body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
 h1,
 h2,
 h3,
 h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+h5,
+h6{
   margin: 0;
+  padding: 0;
 }
 
+// Anchors
 a {
   color: inherit;
   text-decoration: inherit;
+}
+
+// List
+ul{
+  list-style: none;
+}
+
+// Form
+button,
+input,
+select,
+textarea{
+  margin: 0;
+}
+
+
+// Iframe
+iframe{
+  border: 0;
+}
+
+// Table
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th{
+  padding: 0;
+  &:not([align]){
+    text-align: inherit;
+  }
 }
