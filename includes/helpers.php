@@ -8,7 +8,7 @@
  ** print images:
 
  img_src($id, $size = null);;
- img_att($id, $size =null, $tmp_alt = null);
+ img_att($id, $size = null, $tmp_alt = null);
  img_bg($id, $size = null);
 
  ** print images whith jquery lazyload:
@@ -27,7 +27,13 @@
 */
 function img_src($id, $size = null)
 {
-    echo (wp_get_attachment_image_src($id, $size))[0];
+    $img_url = wp_get_attachment_image_src($id, $size);
+
+    if ( $img_url ){
+        $img_url = $img_url[0];
+
+        echo $img_url;
+    };
 }
 
 
@@ -36,17 +42,21 @@ function img_src($id, $size = null)
 */
 function img_att($id, $size =null, $tmp_alt = null)
 {   
-    $img_url = (wp_get_attachment_image_src($id, $size))[0];
-    $img_alt = get_post_meta($id, '_wp_attachment_image_alt', true);
+    $img_url = (wp_get_attachment_image_src($id, $size));
 
-    if($img_alt == ''){
-        if($tmp_alt == null){
-            $tmp_alt = 'Image';
+    if ( $img_url ){
+        $img_url = $img_url[0];
+        $img_alt = get_post_meta($id, '_wp_attachment_image_alt', true);
+    
+        if($img_alt == ''){
+            if($tmp_alt == null){
+                $tmp_alt = 'Image';
+            }
+            $img_alt = $tmp_alt;
         }
-        $img_alt = $tmp_alt;
-    }
-
-    printf('src="%s" alt="%s"', $img_url, $img_alt);
+    
+        printf('src="%s" alt="%s"', $img_url, $img_alt);
+    };
 }
 
 /*
@@ -55,8 +65,13 @@ function img_att($id, $size =null, $tmp_alt = null)
 
 function img_bg($id, $size = null)
 {
-    $src = (wp_get_attachment_image_src($id, $size))[0];
-    printf( "background-image: url('%s')", $src );
+    $img_url = (wp_get_attachment_image_src($id, $size));
+
+    if ( $img_url ){
+        $img_url = $img_url[0];
+
+        printf( "background-image: url('%s')", $img_url );
+    }
 }
 
 
@@ -66,17 +81,21 @@ function img_bg($id, $size = null)
 
 function img_data($id, $size = null, $tmp_alt = null)
 {
-    $src = (wp_get_attachment_image_src($id, $size))[0];
+    $img_url = (wp_get_attachment_image_src($id, $size));
     $img_alt = get_post_meta($id, '_wp_attachment_image_alt', true);
 
-    if($img_alt == ''){
-        if($tmp_alt == null){
-            $tmp_alt = 'Image';
-        }
-        $img_alt = $tmp_alt;
-    }
+    if ( $img_url ){
+        $img_url = $img_url[0];
 
-    printf( 'src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="%s" alt="%s"', $src, $img_alt);
+        if($img_alt == ''){
+            if($tmp_alt == null){
+                $tmp_alt = 'Image';
+            }
+            $img_alt = $tmp_alt;
+        }
+    
+        printf( 'src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="%s" alt="%s"', $img_url, $img_alt);
+    };
 }
 
 /*
@@ -85,8 +104,13 @@ function img_data($id, $size = null, $tmp_alt = null)
 
 function bg_data($id, $size = null)
 {
-    $src = (wp_get_attachment_image_src($id, $size))[0];
-    printf( 'data-src="%s" ', $src);
+    $img_url = (wp_get_attachment_image_src($id, $size));
+
+    if ( $img_url ){
+        $img_url = $img_url[0];
+
+        printf( 'data-src="%s" ', $img_url);
+    };
 }
 
 /**********************************
