@@ -25,8 +25,14 @@
 /*
 *   Print image src
 */
-function img_src($id, $size = null)
+function img_src($data, $size = null)
 {
+    if ( is_array($data) ){
+        $id = $data['id'];
+    } else {
+        $id = $data;
+    }
+
     $img_url = wp_get_attachment_image_src($id, $size);
 
     if ( $img_url ){
@@ -40,8 +46,14 @@ function img_src($id, $size = null)
 /*
 *   Print image src and alt attributs
 */
-function img_att($id, $size =null, $tmp_alt = null)
+function img_att($data, $size =null, $tmp_alt = null)
 {   
+    if ( is_array($data) ){
+        $id = $data['id'];
+    } else {
+        $id = $data;
+    }
+
     $img_url = (wp_get_attachment_image_src($id, $size));
 
     if ( $img_url ){
@@ -63,8 +75,14 @@ function img_att($id, $size =null, $tmp_alt = null)
 *   Print background image
 */
 
-function img_bg($id, $size = null)
+function img_bg($data, $size = null)
 {
+    if ( is_array($data) ){
+        $id = $data['id'];
+    } else {
+        $id = $data;
+    }
+
     $img_url = (wp_get_attachment_image_src($id, $size));
 
     if ( $img_url ){
@@ -79,8 +97,14 @@ function img_bg($id, $size = null)
 *   Lazy load image
 */
 
-function img_data($id, $size = null, $tmp_alt = null)
+function img_data($data, $size = null, $tmp_alt = null)
 {
+    if ( is_array($data) ){
+        $id = $data['id'];
+    } else {
+        $id = $data;
+    }
+    
     $img_url = (wp_get_attachment_image_src($id, $size));
     $img_alt = get_post_meta($id, '_wp_attachment_image_alt', true);
 
@@ -102,8 +126,14 @@ function img_data($id, $size = null, $tmp_alt = null)
 *   Lazy load background image
 */
 
-function bg_data($id, $size = null)
+function bg_data($data, $size = null)
 {
+    if ( is_array($data) ){
+        $id = $data['id'];
+    } else {
+        $id = $data;
+    }
+    
     $img_url = (wp_get_attachment_image_src($id, $size));
 
     if ( $img_url ){
