@@ -1,7 +1,7 @@
 <?php
 
 /*
-*   Add image sizes
+**   Add image sizes
 */
 function adding_theme_image_sizes()
 {
@@ -9,7 +9,7 @@ function adding_theme_image_sizes()
 }
 
 /*
-*   Add theme support
+**   Add theme support
 */
 
 function ml_setup_theme(){
@@ -22,3 +22,19 @@ function ml_setup_theme(){
   ));
 }
 
+/*
+**  Removed unused menu options from admin
+*/
+function unused_menus_remove () 
+{ 
+   remove_menu_page('edit.php');
+   remove_menu_page('edit-comments.php');
+} 
+
+/*
+**  Allow svg uplaods
+*/
+function allow_svg_uploads($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
