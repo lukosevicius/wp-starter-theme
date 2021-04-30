@@ -46,7 +46,7 @@ function img_src($data, $size = null)
 /*
 *   Print image src and alt attributs
 */
-function img_att($data, $size =null, $tmp_alt = null)
+function img_att($data, $size = null, $tmp_alt = null)
 {   
     if ( is_array($data) ){
         $id = $data['id'];
