@@ -21,4 +21,18 @@ if (is_admin()) {
         $script = "jQuery( window ).load(function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } });";
         wp_add_inline_script( 'wp-blocks', $script );
     }
+
+
+    /*
+    **  Remove unnecessary widgters from dashboard
+    */
+    function remove_dashboard_meta() {
+        remove_action( 'welcome_panel', 'wp_welcome_panel' );
+        remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+        remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+        remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
+        }
+
+    add_action( 'admin_init', 'remove_dashboard_meta' );
 }
