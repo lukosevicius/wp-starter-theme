@@ -23,15 +23,6 @@ function ml_setup_theme(){
 }
 
 /*
-**  Removed unused menu options from admin
-*/
-function unused_menus_remove () 
-{ 
-   remove_menu_page('edit.php');
-   remove_menu_page('edit-comments.php');
-} 
-
-/*
 **  Allow svg uplaods
 */
 function allow_svg_uploads($mimes) {
