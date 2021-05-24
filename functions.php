@@ -21,12 +21,6 @@ add_action("wp_enqueue_scripts", "ml_enqueue");
 add_action("after_setup_theme", "ml_setup_theme");
 add_action('init', 'adding_theme_image_sizes');
 
-
-/*
-**  Removed unused menu options from admin
-*/
-// add_action('admin_menu', 'unused_menus_remove');
-
 /*
 **  init widgets
 */
