@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/lukosevicius/wp-starter-theme#readme",
   "devDependencies": {
-    "node-sass": "^5.0.0",
     "autoprefixer": "^10.2.5",
+    "node-sass": "^5.0.0",
     "postcss": "^8.2.9",
     "postcss-cli": "^8.3.1",
     "webpack": "^5.30.0",
