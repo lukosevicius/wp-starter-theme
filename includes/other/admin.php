@@ -9,7 +9,7 @@ if (is_admin()) {
     function unused_menus_remove () 
     { 
     remove_menu_page('edit.php');
-    //    remove_menu_page('edit-comments.php');
+    remove_menu_page('edit-comments.php');
     } 
 
     /*
