@@ -1,14 +1,6 @@
 <?php
 
 /*
-**   Add image sizes
-*/
-function adding_theme_image_sizes()
-{
-  add_image_size('logo_img', 190, 50, array('center', 'center'));
-}
-
-/*
 **   Add theme support
 */
 
