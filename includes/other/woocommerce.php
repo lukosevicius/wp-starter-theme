@@ -4,17 +4,20 @@
 ******          START 
 **********************************/
 
+/* Add WooCommerce Support */
+add_action( 'after_setup_theme', 'woocommerce_support' );
+
 /* Remove checkout fields */
-add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+// add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 
 /* Dequeue styles */
-add_filter( 'woocommerce_enqueue_styles', 'ml_dequeue_styles' );
+// add_filter( 'woocommerce_enqueue_styles', 'ml_dequeue_styles' );
 
 /* Remove or Reorder hooks */
-add_action( 'init' , 'ml_remove_and_reorder_hooks' , 10 );
+// add_action( 'init' , 'ml_remove_and_reorder_hooks' , 10 );
 
 /* Refresh mini-cart with AJAX on add-to-cart*/
-add_filter( 'woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 10, 1 );
+// add_filter( 'woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 10, 1 );
 
 /**********************************
 ******          Functions
