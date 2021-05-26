@@ -10,6 +10,9 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 /* Dequeue styles */
 add_filter( 'woocommerce_enqueue_styles', 'ml_dequeue_styles' );
 
+/* Remove or Reorder hooks */
+add_action( 'init' , 'ml_remove_and_reorder_hooks' , 10 );
+
 /* Refresh mini-cart with AJAX on add-to-cart*/
 add_filter( 'woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 10, 1 );
 
@@ -35,6 +38,11 @@ function iconic_cart_count_fragments( $fragments ) {
     
     return $fragments;
 }
+
+function ml_remove_and_reorder_hooks() {
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+    add_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 40 );
+ }
 
 
 function custom_override_checkout_fields( $fields ) {
