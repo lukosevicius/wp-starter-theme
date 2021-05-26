@@ -12,6 +12,7 @@ include(locate_template('includes/other/admin-removals.php'));
 
 // include(locate_template('includes/other/widgets.php'));
 // include(locate_template('includes/other/post-types.php'));
+// include(locate_template('includes/other/woocommerce.php'));
 
 
 /*  
