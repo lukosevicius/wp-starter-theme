@@ -5,7 +5,7 @@
 **********************************/
 
 /* Add WooCommerce Support */
-add_action( 'after_setup_theme', 'woocommerce_support' );
+add_action( 'after_setup_theme', 'add_woocommerce_support' );
 
 /* Remove checkout fields */
 // add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
