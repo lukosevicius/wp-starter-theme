@@ -2,7 +2,7 @@
 
 function get_current_archive_slug(){
 
-    if ( ! is_archive() ){
+    if ( ! is_archive() || is_shop() ){
         return false;
     };
 
@@ -11,7 +11,7 @@ function get_current_archive_slug(){
 
 function get_current_archive_top_slug(){
 
-    if ( ! is_archive() ){
+    if ( ! is_archive() || is_shop() ){
         return false;
     };
 
