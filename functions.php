@@ -8,6 +8,7 @@ define('ML_DEV_MODE', true);
 include(locate_template('includes/enqueue.php'));
 include(locate_template('includes/setup.php'));
 include(locate_template('includes/images.php'));
+include(locate_template('includes/helpers.php'));
 include(locate_template('includes/other/admin-removals.php'));
 
 // include(locate_template('includes/other/widgets.php'));
