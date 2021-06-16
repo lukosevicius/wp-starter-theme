@@ -8,45 +8,45 @@ if (is_admin()) {
     /*
     **  Remove unnecessary widgets from dashboard
     */
-    add_action( 'admin_init', 'remove_dashboard_meta' );
+    add_action( 'admin_init', 'ml_remove_dashboard_meta' );
 
     /*
     **  Remove unused menu options from admin
     */
-    add_action('admin_menu', 'unused_menus_remove');
+    add_action('admin_menu', 'ml_unused_menus_remove');
 
     /*
     **  Disable full screen on page editor screen
     */
-    add_action( 'enqueue_block_editor_assets', 'jba_disable_editor_fullscreen_by_default' );
+    add_action( 'enqueue_block_editor_assets', 'ml_disable_editor_fullscreen_by_default' );
 
     /*
     **  allow store owners to edit privacy policy
     */
     // $user_id = 2;
-    // add_action('map_meta_cap', 'custom_manage_privacy_options', $user_id, 4);
+    // add_action('map_meta_cap', 'ml_custom_manage_privacy_options', $user_id, 4);
 
     /*
     **  Add ACF options page
     */
-    // add_action('acf/init', 'my_acf_op_init');  
+    // add_action('acf/init', 'ml_add_acf_option_page');  
     
 
     /**********************************
     ******          FUNCTIONS 
     **********************************/
 
-    function unused_menus_remove () { 
+    function ml_unused_menus_remove () { 
         remove_menu_page('edit.php');
         remove_menu_page('edit-comments.php');
     } 
 
-    function jba_disable_editor_fullscreen_by_default() {
+    function ml_disable_editor_fullscreen_by_default() {
         $script = "jQuery( window ).load(function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } });";
         wp_add_inline_script( 'wp-blocks', $script );
     }
 
-    function remove_dashboard_meta() {
+    function ml_remove_dashboard_meta() {
         remove_action( 'welcome_panel', 'wp_welcome_panel' );
         remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
         remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
@@ -55,7 +55,7 @@ if (is_admin()) {
     }
 
 
-    function custom_manage_privacy_options($caps, $cap, $user_id) {
+    function ml_custom_manage_privacy_options($caps, $cap, $user_id) {
         if (!is_user_logged_in()) return $caps;
 
         $user_meta = get_userdata($user_id);
@@ -68,7 +68,7 @@ if (is_admin()) {
         return $caps;
     }
 
-    function my_acf_op_init() {
+    function ml_add_acf_option_page() {
 
         if( function_exists('acf_add_options_sub_page') ) {
     
