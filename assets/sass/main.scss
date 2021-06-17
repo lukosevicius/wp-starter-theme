@@ -3,11 +3,13 @@
 **********************************/
 
 
-@import 'global/_reset.scss';
-@import 'global/_vars.scss';
-@import 'global/_fonts.scss'; 
-@import 'global/_icons.scss'; 
-@import 'global/_global.scss'; 
+@import 'core/_reset.scss';
+@import 'core/_vars.scss';
+@import 'core/_fonts.scss'; 
+@import 'core/_icons.scss'; 
+@import 'core/_global.scss'; 
+
+@import 'components/_buttons.scss'; 
 
 @import 'parts/_header.scss'; 
 @import 'parts/_footer.scss';
