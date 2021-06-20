@@ -30,6 +30,16 @@ if (is_admin()) {
     **  Add ACF options page
     */
     // add_action('acf/init', 'ml_add_acf_option_page');  
+
+    /*
+    **  Sets an admin color scheme based on the environment.
+    *   
+    *   @param string $color_scheme - The current set color scheme.
+    *   @return string $color_scheme - The newly set color scheme.
+    *
+    */
+    add_filter('get_user_option_admin_color', 'ml_set_admin_color_scheme_for_env');  
+    
     
 
     /**********************************
@@ -80,5 +90,31 @@ if (is_admin()) {
             ));
         }
     }
+
+
+    function ml_set_admin_color_scheme_for_env( $color_scheme ){
+        
+        switch ( wp_get_environment_type() ) {
+
+            case 'local':
+            case 'development':
+                $color_scheme = 'default';
+                break;
+              
+            case 'staging':
+                $color_scheme = 'coffee';
+                break;
+              
+            case 'production':
+            default:
+                $color_scheme = 'sunrise';
+                break;
+                
+        }
+
+        return $color_scheme;
+
+    }
+
 
 }
