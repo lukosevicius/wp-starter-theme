@@ -92,28 +92,34 @@ if (is_admin()) {
     }
 
 
+
     function ml_set_admin_color_scheme_for_env( $color_scheme ){
+
+        $logged_user_id = wp_get_current_user()->ID;
+
+        if ( $logged_user_id === 1 ){
+            
+            switch ( wp_get_environment_type() ) {
+    
+                case 'local':
+                case 'development':
+                    $color_scheme = 'default';
+                    break;
+                  
+                case 'staging':
+                    $color_scheme = 'coffee';
+                    break;
+                  
+                case 'production':
+                default:
+                    $color_scheme = 'sunrise';
+                    break;
+                    
+            }
+
+        };
         
-        switch ( wp_get_environment_type() ) {
-
-            case 'local':
-            case 'development':
-                $color_scheme = 'default';
-                break;
-              
-            case 'staging':
-                $color_scheme = 'coffee';
-                break;
-              
-            case 'production':
-            default:
-                $color_scheme = 'sunrise';
-                break;
-                
-        }
-
         return $color_scheme;
-
     }
 
 
