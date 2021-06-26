@@ -1,34 +1,23 @@
 <?php
 
+
+/*  
+*   DEV MODE    
+*/
+
 define('ML_DEV_MODE', true);
 
 /*  
 *   INCLUDES
 */
-include(locate_template('includes/enqueue.php'));
-include(locate_template('includes/setup.php'));
-include(locate_template('includes/images.php'));
-include(locate_template('includes/helpers.php'));
-include(locate_template('includes/other/admin.php'));
+require_once 'inc/enqueue.php';
+require_once 'inc/menus.php';
+require_once 'inc/images.php';
+require_once 'inc/helpers.php';
+require_once 'inc/other/admin.php';
+require_once 'inc/other/blog.php';
 
-// include(locate_template('includes/other/widgets.php'));
-// include(locate_template('includes/other/post-types.php'));
-// include(locate_template('includes/other/woocommerce.php'));
+// require_once 'inc/other/widgets.php';
+// require_once 'inc/other/post-types.php';
+// require_once 'inc/other/woocommerce.php';
 
-
-/*  
-*   HOOKS
-*/
-add_action("wp_enqueue_scripts", "ml_enqueue");
-add_action("after_setup_theme", "ml_setup_theme");
-add_action('init', 'adding_theme_image_sizes');
-
-/*
-**  init widgets
-*/
-// add_action("widgets_init", "ml_widgets"); 
-
-/*
-**  Allow svg uplaods
-*/
-// add_filter('upload_mimes', 'allow_svg_uploads');

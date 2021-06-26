@@ -4,6 +4,8 @@
 ******          Image Sizes 
 **********************************/
 
+add_action('init', 'adding_theme_image_sizes');
+
 function adding_theme_image_sizes()
 {
   add_image_size('logo_img', 190, 50, array('center', 'center'));

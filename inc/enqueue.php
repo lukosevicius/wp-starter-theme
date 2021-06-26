@@ -5,6 +5,8 @@ function ml_enqueue() {
     /**********************************
     ******          Setup 
     **********************************/
+
+    add_action("wp_enqueue_scripts", "ml_enqueue");
     
     $ver = ML_DEV_MODE ? time() : false;
 

@@ -39,7 +39,12 @@ if (is_admin()) {
     *
     */
     add_filter('get_user_option_admin_color', 'ml_set_admin_color_scheme_for_env');  
-    
+
+
+    /*
+    **  Allow svg uplaods
+    */
+    // add_filter('upload_mimes', 'allow_svg_uploads');
     
 
     /**********************************
@@ -121,6 +126,11 @@ if (is_admin()) {
         
         return $color_scheme;
     }
+
+    function ml_mime_types($mimes) {
+        $mimes['svg'] = 'image/svg+xml';
+        return $mimes;
+      }
 
 
 }
