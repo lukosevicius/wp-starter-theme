@@ -26,10 +26,6 @@ if (is_admin()) {
     // $user_id = 2;
     // add_action('map_meta_cap', 'ml_custom_manage_privacy_options', $user_id, 4);
 
-    /*
-    **  Add ACF options page
-    */
-    // add_action('acf/init', 'ml_add_acf_option_page');  
 
     /*
     **  Sets an admin color scheme based on the environment.
@@ -82,21 +78,6 @@ if (is_admin()) {
         }
         return $caps;
     }
-
-    function ml_add_acf_option_page() {
-
-        if( function_exists('acf_add_options_sub_page') ) {
-    
-            $parent = acf_add_options_page(array(
-                'position' => '2.1',
-                'page_title'  => __('Temos bendri nustatymai'),
-                'menu_title'  => __('Temos nustatymai'),
-                'redirect'    => false,
-            ));
-        }
-    }
-
-
 
     function ml_set_admin_color_scheme_for_env( $color_scheme ){
 
