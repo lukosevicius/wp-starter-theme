@@ -1,19 +1,5 @@
 <?php 
 
-/*
-**  Don't break if ACF plugin not active.
-*/
-
-if ( ! class_exists('ACF') ){
-    function get_field(){
-        return null;
-    }
-  
-    function the_field(){
-      return null;
-  }
-};
-
 /**********************************
 ******          ACTIONS 
 **********************************/

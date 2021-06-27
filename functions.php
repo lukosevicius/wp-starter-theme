@@ -13,9 +13,9 @@ define('ML_DEV_MODE', true);
 require_once 'inc/enqueue.php';
 require_once 'inc/images.php';
 require_once 'inc/helpers.php';
-require_once 'inc/acf.php';
 
 require_once 'inc/admin/admin.php';
+require_once 'inc/admin/admin-pages.php';
 require_once 'inc/admin/menus.php';
 require_once 'inc/admin/blog.php';
 
