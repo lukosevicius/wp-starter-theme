@@ -8,7 +8,7 @@ if (is_admin()) {
     /*
     **  Remove unnecessary widgets from dashboard
     */
-    add_action( 'admin_init', 'ml_remove_dashboard_meta' );
+    add_action( 'admin_init', 'ml_remove_dashboard_widgets' );
 
     /*
     **  Remove unused menu options from admin
@@ -61,7 +61,7 @@ if (is_admin()) {
         wp_add_inline_script( 'wp-blocks', $script );
     }
 
-    function ml_remove_dashboard_meta() {
+    function ml_remove_dashboard_widgets() {
         remove_action( 'welcome_panel', 'wp_welcome_panel' );
         remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
         remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
