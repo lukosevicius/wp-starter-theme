@@ -4,6 +4,8 @@
 *   ADD "PASLAUGA" POST TYPE 
 */
 
+// add_action('init', 'create_post_type_paslauga');
+
 // function create_post_type_paslauga(){
     
 //     $labels = array(
@@ -38,21 +40,3 @@
 //     register_post_type('paslauga', $args);
 // }
 
-// add_action('init', 'create_post_type_paslauga');
-
-/*  
-*   REMOVE DEFAULT POST TYPE 
-*/
-
-// function remove_default_post_type()
-// {
-//     remove_menu_page('edit.php');
-//     remove_menu_page('edit-comments.php');
-// }
-// add_action('admin_menu', 'remove_default_post_type');
-
-// function remove_draft_widget()
-// {
-//     remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
-// }
-// add_action('wp_dashboard_setup', 'remove_draft_widget', 999);
