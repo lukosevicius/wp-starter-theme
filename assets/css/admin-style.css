@@ -1,0 +1,4 @@
+/* Remove Ninja Forms banner */
+.nf-admin-notice{
+    display: none!important;
+}

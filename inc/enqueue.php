@@ -1,6 +1,7 @@
 <?php 
 
 add_action("wp_enqueue_scripts", "ml_enqueue");
+add_action('admin_enqueue_scripts', 'ml_enqueue_admin');
 
 function ml_enqueue() {
 
@@ -43,4 +44,16 @@ function ml_enqueue() {
     // wp_enqueue_script("jquery"); //default WP jquery file
     // wp_enqueue_script("ml_jquery_lazy");
     wp_enqueue_script("ml_bundle");
+}
+
+
+/**********************************
+******          Admin
+**********************************/
+
+function ml_enqueue_admin(){
+    define('CSS', get_template_directory_uri() . '/assets/css/');
+
+    wp_register_style("ml_admin-style_css", CSS.'admin-style.css');
+    wp_enqueue_style( 'ml_admin-style_css' );
 }
