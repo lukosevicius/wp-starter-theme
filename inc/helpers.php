@@ -31,3 +31,29 @@ function get_current_archive_top_slug(){
 
     }
 }
+
+function firstActive($key = null, $outputAsAttribute = true, $activeClassName = ''){
+
+    if ( $key == 0 ){
+
+        if ( $activeClassName == '' ){
+            $activeClassName = ' active ';
+        } else {
+            $activeClassName = ' ' . $activeClassName . ' ';
+        }
+
+        $outoutString = $activeClassName;
+        
+        if ( $outputAsAttribute ){
+            $outoutString = ' class="' . $activeClassName . '" ';
+        }
+
+        echo $outoutString;
+    } 
+};
+
+function addID($key = null){
+
+    echo 'data-id="' . $key . '"';
+
+}
