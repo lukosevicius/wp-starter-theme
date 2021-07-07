@@ -52,8 +52,32 @@ function firstActive($key = null, $outputAsAttribute = true, $activeClassName = 
     } 
 };
 
-function addID($key = null){
+function dataID($key = null){
 
     echo 'data-id="' . $key . '"';
+
+}
+
+function custom_order_terms($terms, $order){
+
+    $new_term_array = [];
+
+    foreach ($order as $key => $order_item_name) {
+        foreach ($terms as $key => $term) {
+            
+            if ( $term->name == $order_item_name ){
+                array_push($new_term_array, $term);
+            };
+
+        }
+    }
+
+    foreach ($terms as $key => $term) {
+        if ( !$term->name == $order_item_name ){
+            array_push($new_term_array, $term);
+        };
+    }
+
+    return $new_term_array;
 
 }

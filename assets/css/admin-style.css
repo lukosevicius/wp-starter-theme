@@ -1,4 +1,9 @@
-/* Remove Ninja Forms banner */
+/* Remove Ninja Forms promotions */
+
 .nf-admin-notice{
+    display: none!important;
+}
+
+#ninja-forms-dashboard .promotion--wrapper > div{
     display: none!important;
 }
