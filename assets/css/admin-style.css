@@ -7,3 +7,17 @@
 #ninja-forms-dashboard .promotion--wrapper > div{
     display: none!important;
 }
+
+/* Yoast */
+
+.yoast_premium_upsell{
+    display: none;
+}
+
+#yoast-helpscout-beacon{
+    display: none;
+}
+
+.wpseo_content_wrapper .yoast-sidebar{
+    display: none;
+}
