@@ -98,7 +98,7 @@ if (is_admin()) {
                   
                 case 'production':
                 default:
-                    $color_scheme = 'sunrise';
+                    $color_scheme = 'ectoplasm';
                     break;
                     
             }
