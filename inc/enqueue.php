@@ -54,6 +54,6 @@ function ml_enqueue() {
 function ml_enqueue_admin(){
     define('CSS', get_template_directory_uri() . '/assets/css/');
 
-    wp_register_style("ml_admin-style_css", CSS.'admin-style.css');
-    wp_enqueue_style( 'ml_admin-style_css' );
+    wp_register_style("ml_admin-cleanup_css", CSS.'admin-cleanup.css');
+    wp_enqueue_style( 'ml_admin-cleanup_css' );
 }
